@@ -11,7 +11,7 @@ verbs = ["Analyze", "Create", "Estimate", "Involve", "Respond", "Admit", "Evalua
          "Administer", "Conduct",
          "Invest", "Purchase", "Survey", "Constrain", "Demand", "Imply", "Publish", "Specify", "Contrast", "Integrate",
          "Deviate", "Pursue", "Allocate", "Precede", "Lead"]
-random_word = random.choice(verbs).lower()
+random_word = "participate"
 display = []
 for i in range(0, len(random_word)):
     display.append("_")
@@ -28,14 +28,14 @@ while lives != 0:
     user_guess = input("Enter any letter which you think the word might contain: ").lower()
     for i in range(0, len(random_word)):
         if user_guess == random_word[i]:
-            if user_guess in display:
-                pass
-            else:
-                display[i] = random_word[i]
-                guessed_word = ""
-                for letter in display:
-                    guessed_word += letter
-                print(guessed_word)
+            # if user_guess in display:
+            #     pass
+            # else:
+            display[i] = random_word[i]
+            guessed_word = ""
+            for letter in display:
+                guessed_word += letter
+    # print(guessed_word)
     after_word = guessed_word
     if guessed_word == random_word:
         print("You Win.")
@@ -78,6 +78,8 @@ while lives != 0:
                        \|/     |
                         |      |
                        /       |""")
+    else:
+        print(guessed_word)
 
 if lives == 0:
     print("""            ________
