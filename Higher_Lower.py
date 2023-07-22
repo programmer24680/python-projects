@@ -32,11 +32,14 @@ if consent == "y":
     while playing != 0:
         if score != 0:
             random_question1 = random_question2
+            random_question2 = random.choice(q_list)
+            while random_question2 == random_question1 or random_question2 == random_question1_temp:
+                random_question2 = random.choice(q_list)
         else:
             random_question1 = random.choice(q_list)
-        random_question2 = random.choice(q_list)
-        while random_question2 == random_question1:
             random_question2 = random.choice(q_list)
+            while random_question2 == random_question1:
+                random_question2 = random.choice(q_list)
         a_dict = {
             "A": random_question1,
             "B": random_question2
@@ -50,6 +53,7 @@ if consent == "y":
             print("You win this round.")
             score += 1
             print(f"Your score is {score}")
+            random_question1_temp = random_question1
         else:
             system("cls")
             print("Game over")
